@@ -68,6 +68,8 @@ class UserStampObserver
     {
         $model->restored_by = $this->userId;
         $model->restored_at = Carbon::now();
+        $model->deleted_by = "";
+        $model->deleted_at = "";
         return true;
     }
 }

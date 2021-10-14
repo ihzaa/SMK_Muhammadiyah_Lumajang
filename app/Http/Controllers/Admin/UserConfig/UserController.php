@@ -18,25 +18,30 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            if ($request->has('status')) {
-                $query = User::onlyTrashed();
-                return datatables()->of($query)
-                    ->addColumn('status', function ($obj) {
-                        if ($obj->trashed()) {
-                            return 'Dihapus';
-                        } else {
-                            return 'Aktif';
-                        }
-                    })
-                    ->addColumn('action', function ($obj) {
-                        return '<a class="btn btn-sm btn-success" href="' . route('admin.user_config.user.show', ['id' => $obj->id]) . '" data-toggle="tooltip" data-placement="top" title="Lihat Detail"><i class="far fa-eye"></i></a>';
-                    })
-                    ->editColumn('created_at', function ($data) {
-                        return Carbon::parse($data->created_at)->format('d-m-Y');
-                    })
-                    ->make(true);
-            }
+            // if ($request->has('status')) {
+            //     $query = User::onlyTrashed();
+            //     return datatables()->of($query)
+            //         ->addColumn('status', function ($obj) {
+            //             if ($obj->trashed()) {
+            //                 return 'Dihapus';
+            //             } else {
+            //                 return 'Aktif';
+            //             }
+            //         })
+            //         ->addColumn('action', function ($obj) {
+            //             return '<a class="btn btn-sm btn-success" href="' . route('admin.user_config.user.show', ['id' => $obj->id]) . '" data-toggle="tooltip" data-placement="top" title="Lihat Detail"><i class="far fa-eye"></i></a>';
+            //         })
+            //         ->editColumn('created_at', function ($data) {
+            //             return Carbon::parse($data->created_at)->format('d-m-Y');
+            //         })
+            //         ->make(true);
+            // }
             $query = User::query();
+            if ($request->status == 'delete') {
+                $query = $query->onlyTrashed();
+            } else if ($request->status == '') {
+                $query = $query->withTrashed();
+            }
             return datatables()->of($query)
                 ->addColumn('status', function ($obj) {
                     if ($obj->trashed()) {

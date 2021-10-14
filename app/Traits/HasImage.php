@@ -8,7 +8,7 @@ use Image;
 
 trait HasImage
 {
-    protected $imageAttribute = 'image';
+    protected $imageAttribute = 'img_path';
 
     public function hasImage($attribute = null) {
         $fieldName = is_null($attribute) ? $this->imageAttribute : $attribute;
@@ -20,7 +20,7 @@ trait HasImage
         if ( ! $this->$fieldName) {
             // return url(Constants::NO_IMAGE_FILE_PATH);
         }
-        return url( $this->$fieldName );
+        return asset( $this->$fieldName );
     }
 
     public function imageHtml($attribute = null, $asThumbnail = true) {
@@ -51,7 +51,7 @@ trait HasImage
             // return url(Constants::NO_IMAGE_FILE_PATH);
         }
         $path_parts = pathinfo($this->$fieldName);
-        return url( $path_parts['dirname'] . '/' . $path_parts['filename'] . '.thumb.' . $path_parts['extension']);
+        return asset( $path_parts['dirname'] . '/' . $path_parts['filename'] . '.thumb.' . $path_parts['extension']);
     }
 
 }

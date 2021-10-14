@@ -39,9 +39,9 @@
                             <select class="form-control" id="role" name="role">
                                 <option value="" disabled @if (count($data['user_role']) == 0) selected @endif>Pilih Peran User...</option>
                                 @foreach ($data['roles'] as $k => $v)
-                                    <option value="{{ $k }}" @if (count($data['user_role']) > 0)  @if ($data['user_role'][0]==$v) selected @endif
-                                @endif>
-                                {{ $v }}</option>
+                                    <option value="{{ $k }}" @if (count($data['user_role']) > 0)  @if ($data['user_role'][0] == $v) selected @endif @endif
+                                        >
+                                        {{ $v }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -71,4 +71,5 @@
             </div>
         </div>
     </div>
+    @include('layouts.general_informations.userResponsibleStamp',['data'=>$data['obj']])
 @endsection

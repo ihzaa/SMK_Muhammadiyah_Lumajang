@@ -63,7 +63,6 @@ class ImageUploadHelper {
         $relativePath = $path . $filename;
         $fullPath = public_path( $relativePath );
 
-        // resize and save
         $imageObject = Image::make($image);
         $imageObject->save($fullPath);
 
@@ -79,6 +78,7 @@ class ImageUploadHelper {
             $relativePath_thumb = $path . $filename_thumb;
             $fullPath_thumb = public_path( $relativePath_thumb );
 
+            // resize and save
             $imageObject->fit($thumbWidth, $thumbHeight)->save($fullPath_thumb);
 
             $result['thumb_filename'] = $filename;

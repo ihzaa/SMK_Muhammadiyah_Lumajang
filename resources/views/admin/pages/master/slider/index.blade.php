@@ -1,16 +1,15 @@
 @extends('admin.template.master')
 
-@section('page_title', 'User')
-
+@section('page_title', 'Slider')
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    List User
+                    List Slider
                     <div class="card-tools">
-                        <a class="btn btn-primary" href="{{ route('admin.user_config.user.createGet') }}"><i
+                        <a class="btn btn-primary" href="{{ route('admin.master.slider.create') }}"><i
                                 class="fa fa-plus" aria-hidden="true"></i> Tambah</a>
                     </div>
                     <!-- /.card-tools -->
@@ -19,10 +18,9 @@
                     <table class="table table-bordered" id="main-table">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Created At</th>
+                                <th>Nama</th>
+                                <th>Foto</th>
+                                <th>Dibuat Pada</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
@@ -30,9 +28,8 @@
                                 <th></th>
                                 <th></th>
                                 <th></th>
-                                <th></th>
                                 <th>
-                                    @include('layouts.data_tables.th_general_status',['model'=>'\App\Models\User'])
+                                    @include('layouts.data_tables.th_general_status',['model'=>'\App\Models\Master\Slider'])
                                 </th>
                                 <th></th>
                             </tr>
@@ -45,6 +42,7 @@
 @endsection
 
 @include('layouts.data_tables.basic_data_tables')
+@include('layouts.images_viewer.lightbox')
 
 @push('scripts')
     <script>
@@ -54,16 +52,12 @@
                 serverSide: true,
                 ajax: '{!! url()->full() !!}',
                 columns: [{
-                        data: 'id',
-                        name: 'id',
-                    },
-                    {
                         data: 'name',
                         name: 'name'
                     },
                     {
-                        data: 'email',
-                        name: 'email'
+                        data: 'img_path',
+                        name: 'img_path'
                     },
                     {
                         data: 'created_at',
@@ -83,7 +77,7 @@
             });
 
             $(".th-select-option").change(function() {
-                let url = "{{ route('admin.user_config.user.index', ['status' => '__status']) }}";
+                let url = "{{ url()->full() }}" + "?status=__status";
                 if ($(this).val() != "aktif") {
                     url = url.replace('__status', $(this).val())
                 } else if ($(this).val() != "delete") {
@@ -93,6 +87,7 @@
                 }
                 table.ajax.url(url).load();
             })
+
         });
     </script>
 @endpush

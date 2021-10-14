@@ -11,6 +11,29 @@ with font-awesome or any other icon font library -->
                 </p>
             </a>
         </li>
+        @canany(['view slider'])
+            <li class="nav-item {{ strpos(Route::current()->getName(), 'admin.master.') !== false ? 'menu-open' : '' }} ">
+                <a href="#"
+                    class="nav-link {{ strpos(Route::current()->getName(), 'admin.master.') !== false ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-gem"></i>
+                    <p>
+                        Master
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    @can('view slider')
+                        <li class="nav-item">
+                            <a href="{{ route('admin.master.slider.index') }}"
+                                class="nav-link {{ strpos(Route::current()->getName(), 'admin.master.slider.') !== false ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Slider</p>
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+        @endcanany
         @canany(['view permissions', 'view users'])
             <li
                 class="nav-item {{ strpos(Route::current()->getName(), 'admin.user_config.') !== false ? 'menu-open' : '' }} ">

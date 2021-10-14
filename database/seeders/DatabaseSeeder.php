@@ -19,11 +19,11 @@ class DatabaseSeeder extends Seeder
             PermissionRoleUserSeeder::class,
         ]);
 
-        for ($i = 0; $i < 100; $i++) {
-            User::factory()->create([
-                'name' => 'User-' . ($i + 1),
-                'username' => 'User-' . ($i + 1),
-            ]);
-        }
+        // for ($i = 0; $i < 100; $i++) {
+        //     User::factory()->create([
+        //         'name' => 'User-' . ($i + 1),
+        //         'username' => 'User-' . ($i + 1),
+        //     ]);
+        // }
     }
 }
