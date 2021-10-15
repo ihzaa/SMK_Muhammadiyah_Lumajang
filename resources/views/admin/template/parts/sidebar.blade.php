@@ -11,7 +11,7 @@ with font-awesome or any other icon font library -->
                 </p>
             </a>
         </li>
-        @canany(['view slider'])
+        @canany(['view slider', 'view berita', 'view pengumuman'])
             <li class="nav-item {{ strpos(Route::current()->getName(), 'admin.master.') !== false ? 'menu-open' : '' }} ">
                 <a href="#"
                     class="nav-link {{ strpos(Route::current()->getName(), 'admin.master.') !== false ? 'active' : '' }}">
@@ -31,12 +31,21 @@ with font-awesome or any other icon font library -->
                             </a>
                         </li>
                     @endcan
-                    @can('view news')
+                    @can('view berita')
                         <li class="nav-item">
                             <a href="{{ route('admin.master.news.index') }}"
                                 class="nav-link {{ strpos(Route::current()->getName(), 'admin.master.news.') !== false ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Berita</p>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('view pengumuman')
+                        <li class="nav-item">
+                            <a href="{{ route('admin.master.announcement.index') }}"
+                                class="nav-link {{ strpos(Route::current()->getName(), 'admin.master.announcement.') !== false ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pengumuman</p>
                             </a>
                         </li>
                     @endcan

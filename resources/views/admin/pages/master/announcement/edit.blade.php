@@ -9,33 +9,17 @@
                 <div class="card-header">
                     Edit Berita
                 </div>
-                <form action="{{ route('admin.master.news.update', [$data->id]) }}" method="POST" autocomplete="off"
+                <form action="{{ route('admin.master.announcement.update', [$data->id]) }}" method="POST" autocomplete="off"
                     class="mb-0" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-4">
-                                <img id="img-preview" class="img-fluid m-auto" src="{{ asset($data->img_path) }}"
-                                    alt="your image" />
-                            </div>
-                            <div class="col-md-8">
+                            <div class="col-md-12 mb-4">
                                 <div class="form-group">
                                     <label for="title">Judul <span class="text-danger">*</span></label>
                                     <textarea type="text" class="form-control" id="title" name="title"
-                                        placeholder="Judul Berita">{{ $data->title }}</textarea>
+                                        placeholder="Judul">{{ $data->title }}</textarea>
                                 </div>
-                                <label>Foto <span class="text-danger">*</span></label>
-                                <div class="custom-file mb-5">
-                                    <input type="file" class="custom-file-input img-input" data-previewTarget="#img-preview"
-                                        name="image">
-                                    <label class="custom-file-label">Pilih Foto</label>
-                                    <small class="form-text text-muted">- Ukuran max 2048 KB</small>
-                                    <small class="form-text text-muted">- Harus berupa gambar (format: jpg,
-                                        jpeg, svg, png , dll)</small>
-                                </div>
-                            </div>
-                            <div class="col-md-12 mb-4">
-                                <hr>
                                 <label for="">Isi / Body <span class="text-danger">*</span></label>
                                 <textarea id="summernote" name="body">{{ $data->body }}</textarea>
                             </div>

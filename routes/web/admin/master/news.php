@@ -3,7 +3,7 @@
 use App\Http\Controllers\Admin\Master\NewsController;
 use Illuminate\Support\Facades\Route;
 
-$permission = 'news';
+$permission = 'berita';
 Route::prefix('admin/master/news')->name('admin.master.news.')->middleware(['auth'])->group(function () use ($permission) {
     Route::middleware(['permission:view ' . $permission])->group(function () {
         Route::get('/', [NewsController::class, 'index'])->name('index');
