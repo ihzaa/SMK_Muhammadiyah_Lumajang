@@ -44,8 +44,10 @@
                             <p><span class="text-danger">*</span> : Harus diisi</p>
                         </div>
                     </div>
-                    <div class="card-footer text-muted text-center">
-                        <button class="btn btn-primary"><i class="fas fa-save"></i> Tambah</button>
+                    <div class="card-footer text-muted d-flex">
+                        <a href="{{ route('admin.master.news.index') }}" class="btn btn-secondary mr-auto"><i
+                                class="fas fa-long-arrow-alt-left"></i> Kembali</a>
+                        <button class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>
                     </div>
                 </form>
             </div>

@@ -49,6 +49,15 @@ with font-awesome or any other icon font library -->
                             </a>
                         </li>
                     @endcan
+                    @can('view fasilitas')
+                        <li class="nav-item">
+                            <a href="{{ route('admin.master.facility.index') }}"
+                                class="nav-link {{ strpos(Route::current()->getName(), 'admin.master.facility.') !== false ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Fasilitas</p>
+                            </a>
+                        </li>
+                    @endcan
                 </ul>
             </li>
         @endcanany
