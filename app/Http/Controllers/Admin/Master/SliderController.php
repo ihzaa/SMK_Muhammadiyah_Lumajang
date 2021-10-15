@@ -17,7 +17,7 @@ class SliderController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $query = Slider::query();
+            $query = Slider::orderBy('updated_at', 'DESC');
             if ($request->status == 'delete') {
                 $query = $query->onlyTrashed();
             } else if ($request->status == '') {
@@ -26,7 +26,7 @@ class SliderController extends Controller
             return datatables()->of($query)
                 ->addColumn('status', function ($obj) {
                     if ($obj->trashed()) {
-                        return 'Dihapus';
+                        return '<span class="text-danger">Dihapus</span>';
                     } else {
                         return 'Aktif';
                     }
@@ -44,7 +44,7 @@ class SliderController extends Controller
                 ->editColumn('img_path', function ($data) {
                     return '<a href="' . asset($data->img_path) . '" data-lightbox="image-' . $data->id . '" data-title="' . $data->name . '"><img class="img-fluid" src="' . $data->thumbnail() . '"/></a>';
                 })
-                ->rawColumns(['img_path', 'action'])
+                ->rawColumns(['img_path', 'action', 'status'])
                 ->make(true);
         }
         return view('admin.pages.master.slider.index');

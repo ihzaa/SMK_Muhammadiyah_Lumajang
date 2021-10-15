@@ -31,6 +31,15 @@ with font-awesome or any other icon font library -->
                             </a>
                         </li>
                     @endcan
+                    @can('view news')
+                        <li class="nav-item">
+                            <a href="{{ route('admin.master.news.index') }}"
+                                class="nav-link {{ strpos(Route::current()->getName(), 'admin.master.news.') !== false ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Berita</p>
+                            </a>
+                        </li>
+                    @endcan
                 </ul>
             </li>
         @endcanany

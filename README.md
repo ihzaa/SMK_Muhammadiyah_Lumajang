@@ -8,7 +8,7 @@
 
 ## How To Use:
 1. Clone The Project
-2. Add your new project git remote url by following command on terminal in the root of this project:
+<!-- 2. Add your new project git remote url by following command on terminal in the root of this project:
 ~~~
 .\newGit.bat "YOUR_GIT_REPOSITORY_URL"
 ~~~
@@ -16,7 +16,7 @@
 ~~~
 git remote rm origin
 git remote add origin "YOUR_GIT_REPOSITORY_URL"
-~~~
+~~~ -->
 
 3. Open terminal in the root of this project and do following command:
 ~~~
