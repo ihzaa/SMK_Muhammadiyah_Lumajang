@@ -61,6 +61,29 @@ with font-awesome or any other icon font library -->
                 </ul>
             </li>
         @endcanany
+        @canany(['view about_us'])
+            <li class="nav-item {{ strpos(Route::current()->getName(), 'admin.pages.') !== false ? 'menu-open' : '' }} ">
+                <a href="#"
+                    class="nav-link {{ strpos(Route::current()->getName(), 'admin.pages.') !== false ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-file"></i>
+                    <p>
+                        Pengaturan Halaman
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    @can('view permissions')
+                        <li class="nav-item">
+                            <a href="{{ route('admin.pages.about-us.index') }}"
+                                class="nav-link {{ strpos(Route::current()->getName(), 'admin.pages.about-us.') !== false ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Tentang SMK MULU</p>
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+        @endcanany
         @canany(['view permissions', 'view users'])
             <li
                 class="nav-item {{ strpos(Route::current()->getName(), 'admin.user_config.') !== false ? 'menu-open' : '' }} ">

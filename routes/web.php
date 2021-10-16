@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DeployController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Permission\Commands\CreatePermission;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,11 @@ Route::prefix('auth')->name('auth.')->group(function () {
 });
 
 Route::get('deploy/kucingkucantikdanmanis', [DeployController::class, 'deploy']);
+
+Route::get('permission/create/{permission_name}', function ($permission_name) {
+    CreatePermission::create($permission_name);
+    dd([
+        'STATUS' => 'OK',
+        'MESSAGE' => "Permission [$permission_name] has been created."
+    ]);
+});
