@@ -22,7 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-
+        @include('admin.template.parts.preloader')
         <!-- Navbar -->
         @include('admin.template.parts.navbar')
         <!-- /.navbar -->
@@ -118,6 +118,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         })
     </script>
     @stack('scripts')
+    @include('layouts.alerts.input-invalid')
 </body>
 
 </html>

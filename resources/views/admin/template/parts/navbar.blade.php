@@ -14,6 +14,9 @@
                 <i class="far fa-user"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a href="{{ route('admin.profile.index') }}" class="dropdown-item">
+                    <i class="fas fa-user-cog mr-2"></i> Profile
+                </a>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('auth.logout') }}" class="dropdown-item">
                     <i class="fas fa-sign-out-alt mr-2"></i> Logout
