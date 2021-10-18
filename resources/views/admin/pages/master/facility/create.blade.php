@@ -22,7 +22,7 @@
                                 <div class="form-group">
                                     <label for="title">Judul <span class="text-danger">*</span></label>
                                     <textarea type="text" class="form-control" id="title" name="title"
-                                        placeholder="Judul Berita">{{ old('title') }}</textarea>
+                                        placeholder="Judul">{{ old('title') }}</textarea>
                                 </div>
                                 <label>Foto <span class="text-danger">*</span></label>
                                 <div class="custom-file mb-5">
