@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-12 content-left">
                 <div class="content-up">
-                    <img src="{{ asset('front-user') }}/images/logo.png" alt="" style="height: 100%;">
+                    <img src="{{ asset('front-user') }}/images/logo.png" alt="bottom-logo" style="height: 100%;">
                     <p>{{ env('APP_NAME') }}</p>
                 </div>
                 <div class="content-down">

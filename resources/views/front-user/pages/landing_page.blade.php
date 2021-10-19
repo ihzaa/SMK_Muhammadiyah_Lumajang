@@ -221,7 +221,8 @@
                             @endphp
                             <br>
                             <br>
-                            <a href="#" class="card-link">Lihat Selengkapnya</a>
+                            <a href="{{ $announcement->generateURL('front-user.announcement.show', ['title' => 'title', 'id' => 'id']) }}"
+                                class="card-link">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 @endforeach
@@ -249,7 +250,7 @@
                         <div class="single-berita">
                             <div class="single-berita-img">
                                 <a
-                                    href="{{ route('front-user.news.show', ['title' => urlencode($news->title), 'id' => $news->id]) }}">
+                                    href="{{ $news->generateURL('front-user.news.show', ['title' => 'title', 'id' => 'id']) }}">
                                     <img src="{{ $news->thumbnail() }}" alt="">
                                 </a>
                             </div>
@@ -261,7 +262,7 @@
                             <div class="berita-text">
                                 <h4>
                                     <a
-                                        href="{{ route('front-user.news.show', ['title' => urlencode($news->title), 'id' => $news->id]) }}">{{ $news->title }}</a>
+                                        href="{{ $news->generateURL('front-user.news.show', ['title' => 'title', 'id' => 'id']) }}">{{ $news->title }}</a>
                                 </h4>
                                 <p>
                                     @php
@@ -270,7 +271,7 @@
                                 </p>
                             </div>
                             <span>
-                                <a href="{{ route('front-user.news.show', ['title' => urlencode($news->title), 'id' => $news->id]) }}"
+                                <a href="{{ $news->generateURL('front-user.news.show', ['title' => 'title', 'id' => 'id']) }}"
                                     class="ready-btn">Baca Selengkapnya</a>
                             </span>
                         </div>

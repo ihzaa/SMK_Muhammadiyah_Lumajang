@@ -3,10 +3,11 @@
 namespace App\Models\Master;
 
 use App\Models\BaseModel;
+use App\Traits\CanGenerateUrlFromColumn;
+use App\Traits\RemoveSpecialCharacter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 class Announcement extends BaseModel
 {
-    use HasFactory;
+    use HasFactory, CanGenerateUrlFromColumn;
 }

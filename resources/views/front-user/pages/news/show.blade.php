@@ -3,10 +3,6 @@
 @section('meta_title', $data['news']->title)
 @section('meta_description', strlen(strip_tags($data['news']->body)) > 550 ? substr(strip_tags($data['news']->body), 0, 550) : strip_tags($data['news']->body))
 
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('front-user') }}/css/font-awesome.css" />
-@endpush
-
 @section('content')
     <div id="page-berita" class="row ">
         <div class="col-md-8 ">
