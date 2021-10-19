@@ -16,9 +16,9 @@ use Spatie\Permission\Commands\CreatePermission;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('front-user.pages.landing_page');
+// });
 
 Route::prefix('auth')->name('auth.')->group(function () {
     Route::get('login', [LoginController::class, 'loginGet'])->name('login.get')->middleware(['guest']);

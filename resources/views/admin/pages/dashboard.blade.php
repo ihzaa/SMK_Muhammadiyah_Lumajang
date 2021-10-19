@@ -54,7 +54,7 @@
                     <p>Pengumuman</p>
                 </div>
                 <div class="icon">
-                    <i class="fa fa-newspaper"></i>
+                    <i class="fa fa-bullhorn"></i>
                 </div>
                 <a href="{{ route('admin.master.announcement.index') }}" class="small-box-footer">Lihat <i
                         class="fas fa-arrow-circle-right"></i></a>
@@ -68,7 +68,7 @@
                     <p>Fasilitas</p>
                 </div>
                 <div class="icon">
-                    <i class="fa fa-newspaper"></i>
+                    <i class="fa fa-handshake"></i>
                 </div>
                 <a href="{{ route('admin.master.facility.index') }}" class="small-box-footer">Lihat <i
                         class="fas fa-arrow-circle-right"></i></a>

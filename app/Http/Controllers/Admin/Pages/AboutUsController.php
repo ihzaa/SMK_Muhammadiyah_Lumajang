@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Master\AboutUs;
 use App\Models\Master\DetailImage\AboutUsImage;
 use App\Utils\FlashMessageHelper;
+use App\Utils\ImageUploadHelper;
 use App\Utils\ValidationHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -22,9 +23,11 @@ class AboutUsController extends Controller
     public function update(Request $request)
     {
         $validate = ValidationHelper::validate($request, [
-            'body' => 'required'
+            'body' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ], [], [
-            'body' => 'Isi/Body'
+            'body' => 'Isi/Body',
+            'image' => 'Foto'
         ]);
 
         if ($validate->fails()) {
@@ -33,6 +36,11 @@ class AboutUsController extends Controller
 
         DB::beginTransaction();
         $AboutUs = AboutUs::findOrFail(1);
+
+        if ($request->has('image')) {
+            $imageUploadResult = ImageUploadHelper::upload($request->file('image'), 'assets/images/about_us/', $AboutUs->id . '-cover_about_us', false);
+            $AboutUs->img_path = '/' . $imageUploadResult['image_relative_path'];
+        }
 
         $body = $request->body;
         $dom = new \domdocument();

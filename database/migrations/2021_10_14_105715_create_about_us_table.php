@@ -20,6 +20,7 @@ class CreateAboutUsTable extends Migration
 
             // OPTIONAL
             $table->text('body');
+            $table->text('img_path');
             // OPTIONAL
 
             // MUST HAVE

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Observers\UserStampObserver;
 use App\Traits\CanGetTableNameStatically;
 use App\Traits\UserStamp;
+use Carbon\Carbon;
 
 class BaseModel extends Model
 {
@@ -31,6 +32,11 @@ class BaseModel extends Model
     public function restoredByUser()
     {
         return $this->belongsTo(User::class, 'restored_by');
+    }
+
+    public function getFormattedCreatedAtAttribute()
+    {
+        return Carbon::parse($this->created_at)->format('h:i / d-m-Y ');
     }
 
     // public function restore()

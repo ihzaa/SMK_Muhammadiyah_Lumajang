@@ -23,7 +23,7 @@ function readSubDir($dir, array $subDirs)
     };
 }
 
-$dir   = base_path('routes/web/admin');
+$dir   = base_path('routes/web');
 
 #Scan File To Dir
 $files = scandir($dir);

@@ -14,6 +14,21 @@
                     @csrf
                     <div class="card-body">
                         <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <img id="img-preview" class="img-fluid m-auto" src="{{ asset($data->img_path) }}"
+                                    alt="your image" />
+                            </div>
+                            <div class="col-md-8">
+                                <label>Foto <span class="text-danger">*</span></label>
+                                <div class="custom-file mb-5">
+                                    <input type="file" class="custom-file-input img-input" data-previewTarget="#img-preview"
+                                        name="image">
+                                    <label class="custom-file-label">Pilih Foto</label>
+                                    <small class="form-text text-muted">- Ukuran max 2048 KB</small>
+                                    <small class="form-text text-muted">- Harus berupa gambar (format: jpg,
+                                        jpeg, svg, png , dll)</small>
+                                </div>
+                            </div>
                             <div class="col-md-12 mb-4">
                                 <label for="">Isi / Body <span class="text-danger">*</span></label>
                                 <textarea id="summernote" name="body">{{ $data->body }}</textarea>
@@ -40,6 +55,7 @@
     </div>
 @endsection
 
+@include('layouts.images_viewer.image_with_preview')
 @include('layouts.wysiwyg.summernote')
 
 @push('scripts')

@@ -15,6 +15,7 @@ class AboutUsSeeder extends Seeder
     public function run()
     {
         AboutUs::create([
+            'img_path' => 'assets/images/picture.svg',
             'body' => '<p>Halaman About Us</p>'
         ]);
     }
