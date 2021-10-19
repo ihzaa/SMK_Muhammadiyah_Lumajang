@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light header">
         <div class="container">
             <img src="{{ asset('front-user') }}/images/logo.png" class="top-logo">
             <button class="navbar-toggler navbar-collapse-right no-border" type="button" data-toggle="collapse"
@@ -11,7 +11,7 @@
                 <ul class="navbar-nav ml-auto text-center">
                     <li class="nav-item">
                         <a class="nav-link scroll-to-section" href="#informasi">
-                            <p>Informasi</p>
+                            <p>Beranda</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -32,7 +32,5 @@
                 </ul>
             </div>
         </div>
-
-
     </nav>
 </header>

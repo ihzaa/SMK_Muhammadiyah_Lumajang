@@ -31,7 +31,7 @@
             <div class="content-left">
                 <div class="content-blog">
                     @foreach ($data['news'] as $news)
-                        <a href="{{ route('news.show', ['title' => urlencode($news->title), 'id' => $news->id]) }}">
+                        <a href="{{ route('front-user.news.show', ['title' => urlencode($news->title), 'id' => $news->id]) }}">
                             <div class="card" style="width: 100%">
                                 <div class="image-content">
                                     <img src="{{ $news->thumbnail() }}" class="card-img-top" alt="{{ $news->title }}"
