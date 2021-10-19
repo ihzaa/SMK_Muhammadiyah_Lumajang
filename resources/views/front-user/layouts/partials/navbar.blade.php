@@ -10,23 +10,28 @@
             <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ml-auto text-center">
                     <li class="nav-item">
-                        <a class="nav-link scroll-to-section" href="#informasi">
+                        <a class="nav-link scroll-to-section" href="{{ route('front-user.landing-page') }}">
                             <p>Beranda</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll-to-section" href="#tentang">
-                            <p>Tentang Kami</p>
+                        <a class="nav-link scroll-to-section" href="{{ route('front-user.about-us.index') }}">
+                            <p>Tentang MULU</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll-to-section" href="#pengumuman">
-                            <p>Pengumuman</p>
+                        <a class="nav-link scroll-to-section" href="{{ route('front-user.news.index') }}">
+                            <p>Berita</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll-to-section" href="#berita">
-                            <p>Berita Terkini</p>
+                        <a class="nav-link scroll-to-section" href="">
+                            <p>PPDB</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-to-section" href="">
+                            <p>Fasilitas</p>
                         </a>
                     </li>
                 </ul>

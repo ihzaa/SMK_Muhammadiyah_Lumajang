@@ -248,8 +248,9 @@
                     @foreach ($data['news'] as $news)
                         <div class="single-berita">
                             <div class="single-berita-img">
-                                <a href="#">
-                                    <img src="{{ $news->img_path }}" alt="">
+                                <a
+                                    href="{{ route('front-user.news.show', ['title' => urlencode($news->title), 'id' => $news->id]) }}">
+                                    <img src="{{ $news->thumbnail() }}" alt="">
                                 </a>
                             </div>
                             <div class="berita-meta">
@@ -259,7 +260,8 @@
                             </div>
                             <div class="berita-text">
                                 <h4>
-                                    <a href="#">{{ $news->title }}</a>
+                                    <a
+                                        href="{{ route('front-user.news.show', ['title' => urlencode($news->title), 'id' => $news->id]) }}">{{ $news->title }}</a>
                                 </h4>
                                 <p>
                                     @php
@@ -268,7 +270,8 @@
                                 </p>
                             </div>
                             <span>
-                                <a href="#" class="ready-btn">Baca Selengkapnya</a>
+                                <a href="{{ route('front-user.news.show', ['title' => urlencode($news->title), 'id' => $news->id]) }}"
+                                    class="ready-btn">Baca Selengkapnya</a>
                             </span>
                         </div>
                     @endforeach
