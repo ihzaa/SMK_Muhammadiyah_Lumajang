@@ -34,10 +34,21 @@
                             <p>PPDB</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            <p>Fasilitas</p>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Fasilitas
                         </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @php
+                                $facilities = \App\Models\Master\Facility::get();
+                            @endphp
+                            @foreach ($facilities as $facility)
+                                <a class="dropdown-item"
+                                    href="{{ $facility->generateUrl('front-user.facility.show', ['title' => 'title', 'id' => 'id']) }}">{{ $facility->title }}</a>
+
+                            @endforeach
+                        </div>
                     </li>
                 </ul>
             </div>

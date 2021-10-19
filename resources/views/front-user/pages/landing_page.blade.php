@@ -1,12 +1,12 @@
 @extends('front-user.layouts.master')
 
 @section('meta_title', 'Landing Page')
+@section('meta_description', 'Halaman Utama ' . env('APP_NAME'))
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('front-user') }}/css/owl-carousel.css">
     <link rel="stylesheet" href="{{ asset('front-user') }}/css/animate.min.css">
     <link rel="stylesheet" href="{{ asset('front-user') }}/css/imagehover.css" />
-    <link rel="stylesheet" href="{{ asset('front-user') }}/css/font-awesome.css" />
 @endpush
 
 @section('content')
@@ -298,6 +298,13 @@
     <!-- Global Init -->
     <script>
         new WOW().init();
+        var mh = 0;
+        $('.informasi').each(function() {
+            if ($(this).height() > mh) {
+                mh = $(this).height();
+
+            }
+        }).height(mh);
     </script>
     <script src="{{ asset('front-user') }}/js/custom.js"></script>
 

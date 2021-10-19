@@ -49,35 +49,9 @@ p {
   margin-right: 30px;
 }
 
-.navbar .dropdown-menu li i{
-  color: #7e7e7e;
-}
-
-.navbar .account{
-  border-radius: 50%;
-  border: .1px solid #7e7e7e;
-  padding: 2px;
-}
-
-.navbar .quick-link{
-  margin-right: 10px;
-}
-
-.navbar .quick-link:hover{
-  background-color: rgb(204, 204, 204);
-  border-radius: 50%;
-}
 
 .navbar-toggler {
   margin-left: auto;
-}
-
-.navbar .mobile-account{
-  display: none;
-}
-
-.navbar .mobile-quick{
-  display: none;
 }
 
 .fixed-top {
@@ -110,19 +84,14 @@ p {
 }
 
 .navbar .dropdown{
+  margin-top: 2px;
   margin-right: 10px;
   margin-bottom: 15px;
 }
 
-.navbar .dropdown-menu{
-  left: -59px;
-  padding: 13px;
-  min-width: 8rem;
-}
-
-.navbar .dropdown-menu li a{
-  font-size: 15px;
-  color: black;
+.dropdown  a{
+  font-size: 14px;
+  color: #2a2a2a !important;
 }
 
 .navbar #imageDropdown {
@@ -709,7 +678,6 @@ p {
 
 #page-berita .content-left .card .image-content{
   position: relative;
-  height: 500px;
 }
 
 #page-berita .content-left .card .image-content .tgl{
@@ -801,18 +769,6 @@ p {
   #page-berita .content-left{
     padding: 2rem;
   }
-
-  #page-berita .content-right{
-      padding: 20px;
-      margin-top: 0px !important;
-      margin-right: 0px !important;
-  }
-}
-
-@media (min-width : 200px) and (max-width:440px){
-    #page-berita .content-left .card .image-content{
-        height: 400px;
-    }
 }
 
 @media (min-width: 400px) and (max-width:767px) {

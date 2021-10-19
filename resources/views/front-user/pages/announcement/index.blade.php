@@ -7,7 +7,7 @@
     <div class="col-md-8" style="margin: auto;margin-top: 70px;">
         <form action="{{ url()->current() }}" method="GET">
             <div class="input-group rounded" style="">
-                <input type="search" class="form-control rounded" placeholder="Cari Judul Berita" aria-label="Search"
+                <input type="search" class="form-control rounded" placeholder="Cari Judul Pengumuman" aria-label="Search"
                     aria-describedby="search-addon" name="search" value="{{ request()->search }}" />
                 <button class="input-group-text border-0" id="search-addon" type="submit">
                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -27,6 +27,9 @@
         <div class="col-md-8 ">
             <div class="content-left">
                 <div class="content-blog">
+                    @if (count($data['announcements']) == 0)
+                        <h3 class="text-center">Tidak Ada Data.</h3>
+                    @endif
                     @foreach ($data['announcements'] as $announcement)
                         <a
                             href="{{ $announcement->generateURL('front-user.announcement.show', ['title' => 'title', 'id' => 'id']) }}">

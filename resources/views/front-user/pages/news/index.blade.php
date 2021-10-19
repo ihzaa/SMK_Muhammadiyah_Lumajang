@@ -27,6 +27,9 @@
         <div class="col-md-8 ">
             <div class="content-left">
                 <div class="content-blog">
+                    @if (count($data['news']) == 0)
+                        <h3 class="text-center">Tidak Ada Data.</h3>
+                    @endif
                     @foreach ($data['news'] as $news)
                         <a href="{{ $news->generateURL('front-user.news.show', ['title' => 'title', 'id' => 'id']) }}">
                             <div class="card" style="width: 100%">

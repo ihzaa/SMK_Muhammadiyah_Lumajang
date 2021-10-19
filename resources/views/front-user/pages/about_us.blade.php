@@ -6,10 +6,7 @@
     strip_tags($aboutUs->body))
 
     @push('styles')
-        <link rel="stylesheet" href="{{ asset('front-user') }}/css/owl-carousel.css">
-        <link rel="stylesheet" href="{{ asset('front-user') }}/css/animate.min.css">
         <link rel="stylesheet" href="{{ asset('front-user') }}/css/imagehover.css" />
-        <link rel="stylesheet" href="{{ asset('front-user') }}/css/font-awesome.css" />
     @endpush
 
 @section('content')
