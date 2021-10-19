@@ -1,6 +1,6 @@
-/* 
+/*
 
-    Template made by adyjul with bootstrap 
+    Template made by adyjul with bootstrap
 
 */
 
@@ -15,6 +15,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   background-color: #fff;
+  overflow-x: hidden;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -63,8 +64,8 @@ p {
 }
 
 .navbar .quick-link:hover{
-  background-color: rgb(204, 204, 204);  
-  border-radius: 50%;    
+  background-color: rgb(204, 204, 204);
+  border-radius: 50%;
 }
 
 .navbar-toggler {
@@ -115,11 +116,11 @@ p {
 
 .navbar .dropdown-menu{
   left: -59px;
-  padding: 13px;  
+  padding: 13px;
   min-width: 8rem;
 }
 
-.navbar .dropdown-menu li a{  
+.navbar .dropdown-menu li a{
   font-size: 15px;
   color: black;
 }
@@ -149,7 +150,7 @@ p {
 }
 
 .modal .modal-body .text-center:hover{
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .modal .modal-body .text-center{
@@ -478,7 +479,7 @@ p {
 }
 
 #pengumuman .card .card-title{
-  font-weight: bold;  
+  font-weight: bold;
 }
 
 
@@ -677,6 +678,69 @@ p {
 
 /* end berita */
 
+
+/* page berita */
+
+#page-berita .content-left{
+  width: 100%;
+  margin-top: 40px;
+  padding: 4rem;
+
+
+}
+
+#page-berita .content-left .card{
+  border: none;
+  box-shadow: 0 0 0.999rem 0 rgb(33 37 41 / 23%);
+  border-radius: 9px;
+  margin-bottom: 80px;
+}
+
+#page-berita .content-left .card .card-title{
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+#page-berita .content-left .card i{
+  margin-right: 10px;
+}
+
+#page-berita .content-left .card .image-content{
+  position: relative;
+  height: 500px;
+}
+
+#page-berita .content-left .card .image-content .tgl{
+  position: absolute;
+  bottom: -22px;
+  width: 60px;
+  left: 23px;
+  background: #5da2f1;
+  border-radius: 6px;
+  padding: 12px;
+  height: 60px;
+}
+
+#page-berita .content-left .card .image-content .tgl p{
+  line-height: 1.3;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+#page-berita .content-right .recent-post{
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+#page-berita .content-right .recent-post .card-sidebar{
+  margin-bottom: 30px;
+}
+
+/* end page berita */
+
 /* pengumuman */
 
 
@@ -704,7 +768,7 @@ p {
 
 #footer .content-left{
   background-color: #4489d9;
-  padding: 40px;  
+  padding: 40px;
 }
 
 #footer .content-left .content-up{
@@ -721,7 +785,7 @@ p {
 
 #footer .content-left .content-down p{
   color: #fff;
-  text-align: center;  
+  text-align: center;
   margin-top: 25px;
 }
 
@@ -732,6 +796,24 @@ p {
 /* end footer */
 
 /* responsive */
+
+@media (min-width : 200px) and (max-width : 767px) {
+  #page-berita .content-left{
+    padding: 2rem;
+  }
+
+  #page-berita .content-right{
+      padding: 20px;
+      margin-top: 0px !important;
+      margin-right: 0px !important;
+  }
+}
+
+@media (min-width : 200px) and (max-width:440px){
+    #page-berita .content-left .card .image-content{
+        height: 400px;
+    }
+}
 
 @media (min-width: 400px) and (max-width:767px) {
   #pengumuman .card{
@@ -804,7 +886,7 @@ p {
     font-size: 14px;
   }
 
-  .navbar .dropdown-menu{  
+  .navbar .dropdown-menu{
     min-width: 7rem;
     padding: 18px;
   }
@@ -816,12 +898,12 @@ p {
     border: .1px solid #7e7e7e;
     padding: 2px;
   }
-  
+
 
 
   .navbar .mobile-quick{
-    display: block;    
-    cursor: pointer;    
+    display: block;
+    cursor: pointer;
   }
 
   .navbar-light .navbar-toggler{
