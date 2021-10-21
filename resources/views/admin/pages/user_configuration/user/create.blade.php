@@ -31,13 +31,21 @@
                         <label for="password">Password User <span class="text-danger">*</span></label>
                         <input type="password" class="form-control" id="password" name="password"
                             placeholder="Password User...">
+                            <small>Aturan Password:
+                                <ul>
+                                    <li>Minimal 8 karakter</li>
+                                    <li>Minimal terdapat 1 huruf besar</li>
+                                    <li>Minimal terdapat 1 huruf kecil</li>
+                                    <li>Minimal terdapat 1 angka</li>
+                                </ul>
+                            </small>
                     </div>
                     <div class="form-group">
                         <label for="role">Peran User <span class="text-danger">*</span></label>
                         <select class="form-control" id="role" name="role">
                             <option value="">Pilih Peran User...</option>
                             @foreach ($data['roles'] as $role)
-                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                <option value="{{ $role->id }}" {{old('role') == $role->id ? 'selected' : ''}}>{{ $role->name }}</option>
                             @endforeach
                         </select>
                     </div>

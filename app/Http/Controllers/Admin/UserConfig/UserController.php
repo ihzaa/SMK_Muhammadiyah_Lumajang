@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\UserConfig;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Rules\Password;
 use App\Utils\FlashMessageHelper;
 use App\Utils\ValidationHelper;
 use Carbon\Carbon;
@@ -57,9 +58,15 @@ class UserController extends Controller
             'name' => 'required',
             'username' => 'required|unique:' . User::getTableName(),
             'email' => 'required|email|unique:' . User::getTableName(),
-            'password' => 'required|string|min:8',
+            'password' => [
+                'required', 'min:8',
+                Password::min(8)
+                    ->letters()
+                    ->mixedCase()
+                    ->numbers()
+            ],
             'role' => 'required'
-        ], [], [
+        ], ['min' => ':attribute Minimal terdiri dari :min karakter'], [
             'name' => 'nama',
             'role' => 'peran'
         ]);
@@ -101,9 +108,15 @@ class UserController extends Controller
         $validate = ValidationHelper::validate($request, [
             'name' => 'required',
             'email' => ['required', Rule::unique(User::getTableName())->ignore($user)],
-            'password' => 'nullable|string|min:8',
+            'password' => [
+                'nullable', 'min:8',
+                Password::min(8)
+                    ->letters()
+                    ->mixedCase()
+                    ->numbers()
+            ],
             'role' => 'required'
-        ], [], ['name' => 'nama', 'role' => 'peran']);
+        ], ['min' => ':attribute Minimal terdiri dari :min karakter'], ['name' => 'nama', 'role' => 'peran']);
 
         if ($validate->fails()) {
             return ValidationHelper::validationError($validate);

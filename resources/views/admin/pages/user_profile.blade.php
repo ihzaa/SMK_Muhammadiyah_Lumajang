@@ -38,6 +38,14 @@
                             <input type="password" class="form-control" id="password" name="password"
                                 placeholder="Kosongkan kolom password jika tidak ingin merubah password" autocomplete="off"
                                 value="">
+                            <small>Aturan Password:
+                                <ul>
+                                    <li>Minimal 8 karakter</li>
+                                    <li>Minimal terdapat 1 huruf besar</li>
+                                    <li>Minimal terdapat 1 huruf kecil</li>
+                                    <li>Minimal terdapat 1 angka</li>
+                                </ul>
+                            </small>
                         </div>
                         <div class="form-group">
                             <label for="password_confirmation">Konfirmasi Password</label>

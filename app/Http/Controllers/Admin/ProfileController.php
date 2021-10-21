@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Rules\Password;
 use App\Utils\FlashMessageHelper;
 use App\Utils\ValidationHelper;
 use Illuminate\Http\Request;
@@ -32,7 +33,13 @@ class ProfileController extends Controller
                     $fail('Password Lama Salah!');
                 }
             }];
-            $rules['password'] = 'required|string|min:8|confirmed';
+            $rules['password'] = [
+                'required', 'confirmed', 'min:8',
+                Password::min(8)
+                    ->letters()
+                    ->mixedCase()
+                    ->numbers()
+            ];
             $rules['password_confirmation'] = 'required';
         }
         $validate = ValidationHelper::validate(
@@ -48,7 +55,7 @@ class ProfileController extends Controller
         if ($validate->fails()) {
             return ValidationHelper::validationError($validate);
         }
-        
+
         $data = [
             'name' => $request->name,
             'email' => $request->email

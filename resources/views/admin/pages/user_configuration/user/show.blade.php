@@ -33,14 +33,21 @@
                             <input type="password" class="form-control" id="password" name="password"
                                 placeholder="Kosongkan kolom password jika tidak ingin merubah password" autocomplete="off"
                                 value="">
+                            <small>Aturan Password:
+                                <ul>
+                                    <li>Minimal 8 karakter</li>
+                                    <li>Minimal terdapat 1 huruf besar</li>
+                                    <li>Minimal terdapat 1 huruf kecil</li>
+                                    <li>Minimal terdapat 1 angka</li>
+                                </ul>
+                            </small>
                         </div>
                         <div class="form-group">
                             <label for="role">Peran User <span class="text-danger">*</span></label>
                             <select class="form-control" id="role" name="role">
                                 <option value="" disabled @if (count($data['user_role']) == 0) selected @endif>Pilih Peran User...</option>
                                 @foreach ($data['roles'] as $k => $v)
-                                    <option value="{{ $k }}" @if (count($data['user_role']) > 0)  @if ($data['user_role'][0] == $v) selected @endif @endif
-                                        >
+                                    <option value="{{ $k }}" @if (count($data['user_role']) > 0)  @if ($data['user_role'][0] == $v) selected @endif @endif>
                                         {{ $v }}</option>
                                 @endforeach
                             </select>
