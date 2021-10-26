@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Master\Announcement;
 use App\Models\Master\Facility;
+use App\Models\Master\FooterVideo;
 use App\Models\Master\News;
 use App\Models\Master\Slider;
 use App\Models\User;
@@ -20,6 +21,7 @@ class DashboardController extends Controller
         $data['news'] = News::count();
         $data['announcement'] = Announcement::count();
         $data['facility'] = Facility::count();
+        $data['footer_video'] = FooterVideo::find(1);
         return view('admin.pages.dashboard', compact('data'));
     }
 }

@@ -4,6 +4,9 @@
 
 @section('content')
     <div class="row">
+        <div class="col-md-12">
+            <h3>Rangkuman Data</h3>
+        </div>
         <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-lime">
@@ -73,6 +76,13 @@
                 <a href="{{ route('admin.master.facility.index') }}" class="small-box-footer">Lihat <i
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
+        </div>
+        <div class="col-md-12">
+        <hr>
+            <h3>Video Footer</h3>
+            @php
+                echo $data['footer_video']->url;
+            @endphp
         </div>
     </div>
 @endsection
