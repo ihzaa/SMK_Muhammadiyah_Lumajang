@@ -814,6 +814,7 @@ p {
 
 #footer .content-right .footer-content i{
   margin-right: 10px;
+  font-size: 25px;
 }
 
 #footer .content-right .footer-content p{
@@ -829,6 +830,11 @@ p {
   #page-berita .content-left{
     padding: 2rem;
   }
+
+  #footer .footer-content{
+    margin-top: 50px;
+  }
+
 }
 
 @media (min-width: 400px) and (max-width:767px) {

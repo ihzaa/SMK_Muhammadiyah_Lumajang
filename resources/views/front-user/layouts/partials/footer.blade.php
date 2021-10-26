@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-md-4 col-sm-12 content-left">
                 <div class="content-up">
-                    <img src="./images/logo.png" alt="" style="height: 100%;">
-                    <p>{{env('APP_NAME')}}</p>
+                    <img src="{{ asset('/images/logo.png') }}" alt="" style="height: 100%;">
+                    <p>{{ env('APP_NAME') }}</p>
                 </div>
                 <div class="content-down">
                     <p>Jln.Seruni no 1 , Dau Sengkaling</p>
@@ -25,10 +25,9 @@
                         </div>
                     </div>
                     <div class="col-md-6" style="display: flex;justify-content: center;">
-                        <iframe width="300" height="200" src="https://www.youtube.com/embed/R1Jv5CzwsUc"
-                            style="margin-top: 36px;margin-bottom: 36px;" title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                        @php
+                            echo App\Models\Master\FooterVideo::find(1)->url;
+                        @endphp
                     </div>
                 </div>
             </div>

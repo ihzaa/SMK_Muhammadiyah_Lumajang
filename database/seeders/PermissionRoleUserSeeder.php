@@ -45,6 +45,7 @@ class PermissionRoleUserSeeder extends Seeder
         CreatePermission::create('berita');
         CreatePermission::create('fasilitas');
         CreatePermission::create('pengumuman');
+        CreatePermission::create('footer');
 
         // In login method check the loged-in user Role
     }

@@ -61,7 +61,7 @@ with font-awesome or any other icon font library -->
                 </ul>
             </li>
         @endcanany
-        @canany(['view about_us'])
+        @canany(['view about_us', 'view footer'])
             <li class="nav-item {{ strpos(Route::current()->getName(), 'admin.pages.') !== false ? 'menu-open' : '' }} ">
                 <a href="#"
                     class="nav-link {{ strpos(Route::current()->getName(), 'admin.pages.') !== false ? 'active' : '' }}">
@@ -78,6 +78,15 @@ with font-awesome or any other icon font library -->
                                 class="nav-link {{ strpos(Route::current()->getName(), 'admin.pages.about-us.') !== false ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Tentang SMK MULU</p>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('view footer')
+                        <li class="nav-item">
+                            <a href="{{ route('admin.pages.footer.index') }}"
+                                class="nav-link {{ strpos(Route::current()->getName(), 'admin.pages.footer.') !== false ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pengaturan Footer</p>
                             </a>
                         </li>
                     @endcan
