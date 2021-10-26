@@ -3,8 +3,10 @@
         <div class="row">
             <div class="col-md-4 col-sm-12 content-left">
                 <div class="content-up">
-                    <img src="{{ asset('/images/logo.png') }}" alt="" style="height: 100%;">
-                    <p>{{ env('APP_NAME') }}</p>
+                    <div class="img-content">
+                        <img src="{{ asset('front-user') }}/images/logo.png" alt="" style="height: 100%; margin: auto">
+                    </div>
+                    <p class="text-center">{{ env('APP_NAME') }}</p>
                 </div>
                 <div class="content-down">
                     <p>Jln.Seruni no 1 , Dau Sengkaling</p>

@@ -9,22 +9,22 @@
 
             <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ml-auto text-center">
-                    <li class="nav-item">
+                    <li class="nav-item {{strpos(Route::currentRouteName(), 'front-user.landing-page') !== false ? 'active' : ''}}">
                         <a class="nav-link" href="{{ route('front-user.landing-page') }}">
                             <p>Beranda</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item  {{strpos(Route::currentRouteName(), 'front-user.about-us.index') !== false ? 'active' : ''}}">
                         <a class="nav-link" href="{{ route('front-user.about-us.index') }}">
                             <p>Tentang MULU</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{strpos(Route::currentRouteName(), 'front-user.news') !== false ? 'active' : ''}}">
                         <a class="nav-link" href="{{ route('front-user.news.index') }}">
                             <p>Berita</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{strpos(Route::currentRouteName(), 'front-user.announcement') !== false ? 'active' : ''}}">
                         <a class="nav-link" href="{{ route('front-user.announcement.index') }}">
                             <p>Pengumuman</p>
                         </a>
@@ -34,8 +34,8 @@
                             <p>PPDB</p>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link {{strpos(Route::currentRouteName(), 'front-user.facility') !== false ? 'active' : ''}} dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Fasilitas
                         </a>
