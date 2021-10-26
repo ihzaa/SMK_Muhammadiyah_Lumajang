@@ -234,10 +234,14 @@
         <div class="berita-inner area-padding">
             <div class="berita-overly"></div>
             <div class="container ">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration=".3" data-wow-delay=".2">
-                        <div class="section-headline text-center">
-                            <h2><span>BERITA TERKINI</span></h2>
+                <div class="row text-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="wow fadeInUp" data-wow-duration=".3" data-wow-delay=".2s">
+                            <h4>Berita</h4>
+                        </div>
+                        <div class="wow fadeInUp" data-wow-duration=".3" data-wow-delay=".2s">
+                            <h3>Kumpulan berita SMK MULU</h3>
+                            <hr>
                         </div>
                     </div>
                 </div>
